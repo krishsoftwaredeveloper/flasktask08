@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete Task | Task Manager{% endblock %}
+
+{% block content %}
+<h2>Delete a Task</h2>
+<form method="POST">
+    <div class="form-group">
+        <label for="task_to_delete">Select a Task to Delete:</label>
+        <select class="form-control" id="task_to_delete" name="task_to_delete">
+            {% for task in tasks %}
+                <option value="{{ task }}">{{ task }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    <button type="submit" class="btn btn-danger">Delete Task</button>
+    <a href="/" class="btn btn-secondary">Back to Home</a>
+</form>
+{% endblock %}
